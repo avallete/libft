@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/20 16:23:27 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/11 11:15:31 by avallete         ###   ########.fr       */
+/*   Created: 2014/11/03 14:41:36 by avallete          #+#    #+#             */
+/*   Updated: 2014/11/14 11:23:25 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_nbrlen(int nbr)
+char			*ft_strdup(const char *s)
 {
-	size_t i;
+	int		i;
+	char	*scop;
 
-	i = 1;
-	if (nbr < 0)
-		nbr = -nbr;
-	while (nbr / 10)
+	i = ((ft_strlen(s)) + 1);
+	if ((scop = ((char*)malloc(sizeof(char) * i))))
 	{
-		nbr /= 10;
-		i++;
+		ft_strcpy(scop, s);
+		return (scop);
 	}
-	return (i);
+	return (NULL);
 }

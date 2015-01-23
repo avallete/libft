@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 14:41:36 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/22 14:26:40 by avallete         ###   ########.fr       */
+/*   Created: 2014/11/03 14:41:35 by avallete          #+#    #+#             */
+/*   Updated: 2015/01/16 11:27:33 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strdup(const char *s)
+void		ft_putnbr(int n)
 {
-	int		i;
-	char	*scop;
+	char *str;
 
-	if (s)
+	str = ft_itoa(n);
+	if (str)
 	{
-		i = ((ft_strlen(s)) + 1);
-		if ((scop = ((char*)malloc(sizeof(char) * i))))
-		{
-			ft_strcpy(scop, s);
-			return (scop);
-		}
+		ft_putstr(str);
+		free(str);
+		str = NULL;
 	}
-	return (NULL);
 }

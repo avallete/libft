@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_filler.c                                        :+:      :+:    :+:   */
+/*   ft_wnstrlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/11 11:25:50 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/11 11:28:17 by avallete         ###   ########.fr       */
+/*   Created: 2015/01/16 12:41:15 by avallete          #+#    #+#             */
+/*   Updated: 2015/01/16 12:43:00 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_printf.h>
 
-void	ft_filler(char c, size_t len)
+int		ft_wnstrlen(wchar_t *str, int n)
 {
-	size_t i;
+	int i;
 
 	i = 0;
-	while (i++ <= len)
-		ft_putchar(c);
+	while (*str != '\0' && (i + ft_wcharlen(*str)) <= n)
+	{
+		i += ft_wcharlen(*str);
+		str++;
+	}
+	return (i);
 }
