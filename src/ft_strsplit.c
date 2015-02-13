@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:36 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/04 17:00:21 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/13 11:42:47 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,10 +105,9 @@ char					**ft_strsplit(char const *s, char c)
 			ft_bzero(result[i], l[i] + 1);
 			while (*s == c)
 				s++;
-			ft_memcpy(result[i], s, l[i]);
-			s += l[i];
-			i++;
+			ft_memcpy(result[i], s, l[i]), s += l[i++];
 		}
+		free(l);
 	}
 	return (result);
 }

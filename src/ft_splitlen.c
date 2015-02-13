@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_splitlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/04 11:31:31 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/09 20:27:55 by avallete         ###   ########.fr       */
+/*   Created: 2015/02/13 17:33:10 by avallete          #+#    #+#             */
+/*   Updated: 2015/02/13 17:34:29 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <libft.h>
-# define BUFF_SIZE 16
+#include <libft.h>
 
-int					get_next_line(int const fd, char **line);
-#endif
+size_t	ft_splitlen(char **env)
+{
+	size_t i;
+
+	i = 0;
+	if (env)
+		while (env[i])
+			i++;
+	return (i);
+}

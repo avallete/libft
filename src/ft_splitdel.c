@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_splitdel.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/04 11:31:31 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/09 20:27:55 by avallete         ###   ########.fr       */
+/*   Created: 2015/02/13 17:35:15 by avallete          #+#    #+#             */
+/*   Updated: 2015/02/13 17:37:33 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <libft.h>
-# define BUFF_SIZE 16
+#include <libft.h>
 
-int					get_next_line(int const fd, char **line);
-#endif
+void	ft_splitdel(char **split)
+{
+	int i;
+
+	i = 0;
+	if (split)
+	{
+		while ((split)[i])
+			i++;
+		while (i > 0)
+			free((split)[i--]);
+		if (split[i])
+			free((split)[i]);
+		free(split);
+		split = NULL;
+	}
+}
+
+
