@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:54 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/13 17:37:41 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/18 12:52:21 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# define FT_ABS(x)  (((x) < 0) ? -(x) : (x))
 
 typedef struct		s_list
 {
@@ -73,6 +74,8 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_splitprint(char **split);
+void				ft_putsterr(char *str);
+void				ft_puterrdl(char *str);
 
 /*
 ** Tree Functions
@@ -116,6 +119,7 @@ void				*ft_memmove(void *dst, const void *src, size_t n);
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_realloc(void *ptr, size_t size);
 void				*ft_calloc(size_t nmemb, size_t size);
+void				ft_secfree(void *ptr);
 
 /*
 ** List functions
@@ -133,8 +137,10 @@ size_t				ft_lstsize(t_list *list);
 /*
 ** Split functions
 */
-int					ft_tabstrcmp(char **tab, char *str);
+int					ft_tabstrcmp(char **tab, char *str, size_t size);
 char				**ft_strsplit(char const *s, char c);
 size_t				ft_splitlen(char **env);
 void				ft_splitdel(char **split);
+char				**ft_resizesplit(char **src, size_t begin, size_t end);
+void				split_iter(char **split, void *(*f)(char *str));
 #endif

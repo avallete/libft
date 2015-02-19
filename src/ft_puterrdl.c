@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabstrcmp.c                                     :+:      :+:    :+:   */
+/*   ft_puterrdl.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/13 17:13:55 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/14 18:47:51 by avallete         ###   ########.fr       */
+/*   Created: 2015/02/14 12:43:01 by avallete          #+#    #+#             */
+/*   Updated: 2015/02/14 12:43:43 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_tabstrcmp(char **tab, char *str, size_t size)
+void	ft_puterrdl(char *str)
 {
-	int i;
-
-	i = 0;
-	while (tab[i])
-	{
-		if (ft_strncmp(tab[i], str, size) == 0)
-			return (i);
-		i++;
-	}
-	return (-1);
+	ft_putsterr(str);
+	ft_putchar_fd('\n', 2);
 }

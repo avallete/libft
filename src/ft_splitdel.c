@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/13 17:35:15 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/13 17:37:33 by avallete         ###   ########.fr       */
+/*   Updated: 2015/02/18 12:52:51 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@ void	ft_splitdel(char **split)
 	i = 0;
 	if (split)
 	{
-		while ((split)[i])
+		while (((split)[i]) != NULL)
 			i++;
 		while (i > 0)
-			free((split)[i--]);
-		if (split[i])
-			free((split)[i]);
+			free(((split)[i--]));
+		if ((split[i]))
+			free(((split)[i]));
 		free(split);
 		split = NULL;
 	}
 }
-
-

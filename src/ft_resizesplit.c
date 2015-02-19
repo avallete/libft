@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabstrcmp.c                                     :+:      :+:    :+:   */
+/*   ft_resizesplit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/13 17:13:55 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/14 18:47:51 by avallete         ###   ########.fr       */
+/*   Created: 2015/02/14 12:06:32 by avallete          #+#    #+#             */
+/*   Updated: 2015/02/18 12:52:35 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_tabstrcmp(char **tab, char *str, size_t size)
+char	**ft_resizesplit(char **src, size_t begin, size_t end)
 {
-	int i;
+	char	**new;
+	int		size;
+	int		i;
 
 	i = 0;
-	while (tab[i])
-	{
-		if (ft_strncmp(tab[i], str, size) == 0)
-			return (i);
-		i++;
-	}
-	return (-1);
+	size = end - begin;
+	size = FT_ABS(size);
+	new = (char**)malloc(sizeof(char*) * size + 1);
+	while (src[begin] && i < size)
+		new[i] = ft_strdup(src[begin++]), i++;
+	ft_splitdel(src);
+	new[size] = NULL;
+	return (new);
 }

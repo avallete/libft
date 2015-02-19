@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabstrcmp.c                                     :+:      :+:    :+:   */
+/*   ft_secfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/13 17:13:55 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/14 18:47:51 by avallete         ###   ########.fr       */
+/*   Created: 2015/02/16 16:47:56 by avallete          #+#    #+#             */
+/*   Updated: 2015/02/16 16:48:37 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_tabstrcmp(char **tab, char *str, size_t size)
+void	ft_secfree(void *ptr)
 {
-	int i;
-
-	i = 0;
-	while (tab[i])
-	{
-		if (ft_strncmp(tab[i], str, size) == 0)
-			return (i);
-		i++;
-	}
-	return (-1);
+	if (ptr)
+		free(ptr);
+	ptr = NULL;
 }

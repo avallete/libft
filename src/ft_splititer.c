@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabstrcmp.c                                     :+:      :+:    :+:   */
+/*   ft_splititer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/13 17:13:55 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/14 18:47:51 by avallete         ###   ########.fr       */
+/*   Created: 2015/02/14 14:19:43 by avallete          #+#    #+#             */
+/*   Updated: 2015/02/14 14:20:10 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_tabstrcmp(char **tab, char *str, size_t size)
+void	split_iter(char **split, void *(*f)(char *str))
 {
 	int i;
 
 	i = 0;
-	while (tab[i])
+	if (split)
 	{
-		if (ft_strncmp(tab[i], str, size) == 0)
-			return (i);
-		i++;
+		while (split[i])
+			f(split[i]), i++;
 	}
-	return (-1);
 }

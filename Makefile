@@ -6,7 +6,7 @@
 #    By: avallete <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#    Updated: 2015/02/13 17:37:32 by avallete         ###   ########.fr        #
+#    Updated: 2015/02/17 09:27:32 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,11 @@ ft_splitprint.c\
 ft_splitlen.c\
 ft_calloc.c\
 ft_splitdel.c\
+ft_resizesplit.c\
+ft_splititer.c\
+ft_secfree.c\
+ft_putsterr.c\
+ft_puterrdl.c\
 ft_check.c\
 ft_converter_char.c\
 ft_converter_int.c\
@@ -125,7 +130,8 @@ CFLAGS=-Wall -Wextra -Werror
 CC=-gcc
 NAME=libftprintf.a
 RED=\033[0;31m
-LBLUE=\033[1;34m
+LBLUE=\033[34m
+GREEN=\033[32m
 CYAN=\033[0;36m
 ORANGE=\033[0;33m
 NC=\033[0m
@@ -133,7 +139,7 @@ NC=\033[0m
 all: $(NAME)
 
 $(NAME):$(OBJ)
-	@echo "${RED}Compile $(NAME) with $(CFLAGS)${NC}";
+	@echo "${GREEN}Compile $(NAME) with $(CFLAGS)${NC}";
 	@echo "${LBLUE}ar rc $(NAME)${NC}"
 	@ar rc $(NAME) $(OBJ)
 	@echo "${ORANGE}ranlib $(NAME)${NC}"
@@ -141,15 +147,15 @@ $(NAME):$(OBJ)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(OBJ_PATH)
-	@echo "${ORANGE}Create bynary $@ with $<${NC}";
+	@echo "${ORANGE}Create bynary $(NAME) : $@ with $<${NC}";
 	@$(CC) $(CFLAGS) $(INC) -o $@ -c $<
 
 clean:
-	@echo "${CYAN}Delete OBJ files${NC}"
+	@echo "${RED}Delete OBJ files${NC}"
 	@rm -rf $(OBJ_PATH)
 
 fclean: clean
-	@echo "${CYAN}Delete $(NAME) file${NC}"
+	@echo "${RED}Delete $(NAME) file${NC}"
 	@rm -rf $(NAME)
 
 re: fclean all clean
