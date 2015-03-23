@@ -115,6 +115,7 @@ ft_treenew.c\
 ft_wcharlen.c\
 ft_wnstrlen.c\
 get_next_line.c\
+ft_printtab.c\
 ft_wstrlen.c
 OBJ_PATH =./obj/
 OBJ_NAME=$(SRC_NAME:.c=.o)

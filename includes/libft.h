@@ -76,6 +76,7 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_splitprint(char **split);
 void				ft_putsterr(char *str);
 void				ft_puterrdl(char *str);
+void				ft_printtab(int *tab, int max);
 
 /*
 ** Tree Functions
