@@ -6,11 +6,11 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 16:11:38 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/18 10:16:41 by avallete         ###   ########.fr       */
+/*   Updated: 2015/01/23 13:14:36 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <get_next_line.h>
+#include "get_next_line.h"
 
 static unsigned int	check_line(char *buf)
 {
@@ -75,7 +75,7 @@ int					get_next_line(int const fd, char **line)
 	static char		*buf = NULL;
 
 	buf2 = NULL;
-	if (fd < 0 || (!(line)) || BUFF_SIZE < 1)
+	if (fd <= 0 || (!(line)) || BUFF_SIZE < 1)
 		return (-1);
 	if ((!(buf2 = (char*)malloc(sizeof(char) * BUFF_SIZE + 1))))
 		return (-1);
