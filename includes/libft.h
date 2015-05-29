@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:54 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/18 12:52:21 by avallete         ###   ########.fr       */
+/*   Updated: 2015/05/29 20:31:19 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct      s_dlst
+{
+    void            *content;
+    size_t          content_size;
+    struct s_dlst   *next;
+    struct s_dlst   *back;
+}                   t_dlst;
 
 typedef struct		s_tree
 {
@@ -134,6 +142,15 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstlast(t_list *begin_list);
 size_t				ft_lstsize(t_list *list);
+
+/*
+** Double linked list functions
+*/
+t_dlst              *ft_dlstnew(void *content, size_t content_size);
+void                ft_dlstadd(t_dlst **lst, t_dlst *new);
+void                ft_dlstdelone(t_dlst **lst);
+void                ft_dlstpushback(t_dlst **lst, t_dlst *new);
+void                ft_circlelist(t_dlst **list);
 
 /*
 ** Split functions

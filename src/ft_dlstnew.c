@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
+/*   ft_dlstnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 12:30:47 by avallete          #+#    #+#             */
-/*   Updated: 2015/05/29 19:31:59 by avallete         ###   ########.fr       */
+/*   Created: 2015/05/28 02:48:17 by avallete          #+#    #+#             */
+/*   Updated: 2015/05/29 19:36:25 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstpushback(t_list **alst, t_list *new)
+t_dlst  *ft_dlstnew(void *content, size_t content_size)
 {
-	t_list *begin;
+    t_dlst *new;
 
-	begin = *alst;
-	if (new)
-	{
-		while (begin->next != NULL)
-			begin = begin->next;
-		begin->next = new;
-		new->next = NULL;
-	}
+    if ((new = (t_dlst*)malloc(sizeof(t_dlst))))
+    {
+        new->content = content;
+        new->content_size = content_size;
+        new->next = NULL;
+        new->back = NULL;
+    }
+    return (new);
 }

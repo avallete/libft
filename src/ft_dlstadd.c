@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
+/*   ft_dlstadd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 12:30:47 by avallete          #+#    #+#             */
-/*   Updated: 2015/05/29 19:31:59 by avallete         ###   ########.fr       */
+/*   Created: 2015/05/28 18:04:30 by avallete          #+#    #+#             */
+/*   Updated: 2015/05/29 20:16:56 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstpushback(t_list **alst, t_list *new)
+void                ft_dlstadd(t_dlst **lst, t_dlst *new)
 {
-	t_list *begin;
+    t_dlst *begin;
 
-	begin = *alst;
-	if (new)
-	{
-		while (begin->next != NULL)
-			begin = begin->next;
-		begin->next = new;
-		new->next = NULL;
-	}
+    begin = *lst;
+    new->next = begin;
+    *lst = new;
+    new->back = NULL;
 }

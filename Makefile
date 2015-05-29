@@ -6,12 +6,12 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#    Updated: 2015/05/25 05:25:34 by avallete         ###   ########.fr        #
+#    Updated: 2015/05/29 20:32:24 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_PATH=./src/
-SRC_NAME=	ft_argument.c\
+SRC_NAME=ft_argument.c\
 			ft_atoi.c\
 			ft_bzero.c\
 			ft_tabstrcmp.c\
@@ -55,6 +55,11 @@ SRC_NAME=	ft_argument.c\
 			ft_lstnew.c\
 			ft_lstpushback.c\
 			ft_lstsize.c\
+			ft_dlstnew.c\
+			ft_dlstadd.c\
+			ft_dlstdelone.c\
+			ft_dlstpushback.c\
+			ft_circlelist.c\
 			ft_memalloc.c\
 			ft_memccpy.c\
 			ft_memchr.c\
@@ -120,9 +125,9 @@ SRC_NAME=	ft_argument.c\
 OBJ_PATH =./obj/
 OBJ_NAME=$(SRC_NAME:.c=.o)
 INC_PATH=./includes/
-INC_NAME=	libft.h\
-		 	get_next_line.h\
-			ft_printf.h
+INC_NAME=libft.h\
+		get_next_line.h\
+		ft_printf.h
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ=$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INCF=$(addprefix $(INC_PATH), $(INC_NAME))

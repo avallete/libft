@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
+/*   ft_circlelist.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/10 12:30:47 by avallete          #+#    #+#             */
-/*   Updated: 2015/05/29 19:31:59 by avallete         ###   ########.fr       */
+/*   Created: 2015/05/29 20:29:06 by avallete          #+#    #+#             */
+/*   Updated: 2015/05/29 20:31:25 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstpushback(t_list **alst, t_list *new)
+void ft_circlelist(t_dlst **list)
 {
-	t_list *begin;
+    t_dlst *begin;
+    t_dlst *end;
 
-	begin = *alst;
-	if (new)
-	{
-		while (begin->next != NULL)
-			begin = begin->next;
-		begin->next = new;
-		new->next = NULL;
-	}
+    begin = *list;
+    end = *list;
+    if (begin)
+    {
+        while (end->next)
+            end = end->next;
+        end->next = begin;
+    }
 }
