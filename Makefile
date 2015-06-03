@@ -6,7 +6,7 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#    Updated: 2015/05/29 20:32:24 by avallete         ###   ########.fr        #
+#    Updated: 2015/05/30 00:45:46 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ SRC_NAME=ft_argument.c\
 			ft_dlstnew.c\
 			ft_dlstadd.c\
 			ft_dlstdelone.c\
+			ft_dlstiter.c\
 			ft_dlstpushback.c\
 			ft_circlelist.c\
 			ft_memalloc.c\

@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:54 by avallete          #+#    #+#             */
-/*   Updated: 2015/05/29 20:31:19 by avallete         ###   ########.fr       */
+/*   Updated: 2015/06/02 03:13:09 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ t_dlst              *ft_dlstnew(void *content, size_t content_size);
 void                ft_dlstadd(t_dlst **lst, t_dlst *new);
 void                ft_dlstdelone(t_dlst **lst);
 void                ft_dlstpushback(t_dlst **lst, t_dlst *new);
+void                ft_dlstiter(t_dlst *list, void (*f)(t_dlst *elem));
 void                ft_circlelist(t_dlst **list);
 
 /*
