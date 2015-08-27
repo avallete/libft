@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:54 by avallete          #+#    #+#             */
-/*   Updated: 2015/06/02 03:13:09 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/27 15:03:47 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void				ft_splitprint(char **split);
 void				ft_putsterr(char *str);
 void				ft_puterrdl(char *str);
 void				ft_printtab(int *tab, int max);
+void                ft_putnstr(char* str, unsigned int size);
 
 /*
 ** Tree Functions

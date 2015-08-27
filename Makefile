@@ -6,7 +6,7 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#    Updated: 2015/05/30 00:45:46 by avallete         ###   ########.fr        #
+#    Updated: 2015/08/27 15:01:43 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC_NAME=ft_argument.c\
 			ft_secfree.c\
 			ft_putsterr.c\
 			ft_puterrdl.c\
+			ft_putnstr.c\
 			ft_check.c\
 			ft_converter_char.c\
 			ft_converter_int.c\
