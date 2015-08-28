@@ -6,7 +6,7 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#    Updated: 2015/08/27 15:01:43 by avallete         ###   ########.fr        #
+#    Updated: 2015/08/28 11:57:04 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -123,13 +123,15 @@ SRC_NAME=ft_argument.c\
 			ft_wnstrlen.c\
 			get_next_line.c\
 			ft_printtab.c\
-			ft_wstrlen.c
+			ft_wstrlen.c\
+			ft_bufferize.c
 OBJ_PATH =./obj/
 OBJ_NAME=$(SRC_NAME:.c=.o)
 INC_PATH=./includes/
 INC_NAME=libft.h\
 		get_next_line.h\
-		ft_printf.h
+		ft_printf.h\
+		ft_bufferize.h
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ=$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INCF=$(addprefix $(INC_PATH), $(INC_NAME))
