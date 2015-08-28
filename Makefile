@@ -6,7 +6,7 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#    Updated: 2015/08/28 11:57:04 by avallete         ###   ########.fr        #
+#    Updated: 2015/08/28 14:38:46 by avallete         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,6 +93,7 @@ SRC_NAME=ft_argument.c\
 			ft_strchr.c\
 			ft_strclr.c\
 			ft_strcmp.c\
+			ft_stralcmp.c\
 			ft_strcpy.c\
 			ft_strdel.c\
 			ft_strdup.c\
@@ -136,7 +137,7 @@ SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ=$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INCF=$(addprefix $(INC_PATH), $(INC_NAME))
 INC=$(addprefix -I, $(INC_PATH))
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror -g
 CC=gcc
 NAME=libftprintf.a
 RED=\033[0;31m

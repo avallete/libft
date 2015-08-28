@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:35 by avallete          #+#    #+#             */
-/*   Updated: 2014/11/04 14:12:39 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/28 13:26:37 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,6 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t i;
-	size_t e;
-
-	i = 0;
-	e = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[e] != '\0')
-	{
-		s1[i] = s2[e];
-		e++;
-		i++;
-	}
-	s1[i] = '\0';
+	ft_strcpy(s1 + ft_strlen(s1), s2);
 	return (s1);
 }

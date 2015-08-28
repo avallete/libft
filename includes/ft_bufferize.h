@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/28 11:05:07 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/28 12:25:45 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/28 14:26:38 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_BUFFERIZE
 # include "libft.h"
 # include <stdbool.h>
-# define BUFFERIZE_SIZE 2048
+# define BUFFERIZE_SIZE 4096
 
 int     ft_bufferize(int fd, char *str, bool flush);
 #endif
