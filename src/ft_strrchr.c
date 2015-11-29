@@ -12,7 +12,7 @@
 
 #define NULL 0
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 	char	*pos;

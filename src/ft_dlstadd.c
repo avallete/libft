@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-void                ft_dlstadd(t_dlst **lst, t_dlst *new)
+void	ft_dlstadd(t_dlst **lst, t_dlst *new)
 {
-    t_dlst *begin;
+	t_dlst *begin;
 
-    begin = *lst;
-    new->next = begin;
-    *lst = new;
-    new->back = NULL;
+	begin = *lst;
+	new->next = begin;
+	*lst = new;
+	new->back = NULL;
 }

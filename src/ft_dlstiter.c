@@ -12,13 +12,16 @@
 
 #include "libft.h"
 
-void ft_dlstiter(t_dlst *list, void (*f)(t_dlst *elem))
+void	ft_dlstiter(t_dlst *list, void (*f)(t_dlst *elem))
 {
-    if (list)
-    {
-        while (list->back)
-            list = list->back;
-        while (list)
-            f(list), list = list->next;
-    }
+	if (list)
+	{
+		while (list->back)
+			list = list->back;
+		while (list)
+		{
+			f(list);
+			list = list->next;
+		}
+	}
 }

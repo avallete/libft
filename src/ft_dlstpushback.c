@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-void                ft_dlstpushback(t_dlst **lst, t_dlst *new)
+void	ft_dlstpushback(t_dlst **lst, t_dlst *new)
 {
-    t_dlst *begin;
+	t_dlst *begin;
 
-    begin = *lst;
-    if (begin)
-    {
-        while (begin->next)
-            begin = begin->next;
-        begin->next = new;
-        new->back = begin;
-    }
+	begin = *lst;
+	if (begin)
+	{
+		while (begin->next)
+			begin = begin->next;
+		begin->next = new;
+		new->back = begin;
+	}
 }

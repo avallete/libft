@@ -46,8 +46,11 @@ void	print_int_opt(t_flags *flags, int c, int size, int *i)
 	else
 	{
 		print_plus(flags, i, c, &size);
-		if (flags->optzero || flags->prec)
-			c < 0 ? (c = -c, ft_putchar('-')) : (c += 0);
+		if ((flags->optzero || flags->prec) && c < 0)
+		{
+			c = -c;
+			ft_putchar('-');
+		}
 		if (flags->min_size)
 			fill_it(flags, flags->min_size - size);
 		if (flags->prec)

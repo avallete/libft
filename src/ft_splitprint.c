@@ -20,6 +20,9 @@ void	ft_splitprint(char **split)
 	if (split)
 	{
 		while (split[i])
-			ft_putendl(split[i]), i++;
+		{
+			ft_putendl(split[i]);
+			i++;
+		}
 	}
 }

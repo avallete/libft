@@ -23,7 +23,10 @@ char	**ft_resizesplit(char **src, size_t begin, size_t end)
 	size = FT_ABS(size);
 	new = (char**)malloc(sizeof(char*) * size + 1);
 	while (src[begin] && i < size)
-		new[i] = ft_strdup(src[begin++]), i++;
+	{
+		new[i] = ft_strdup(src[begin++]);
+		i++;
+	}
 	ft_splitdel(src);
 	new[size] = NULL;
 	return (new);

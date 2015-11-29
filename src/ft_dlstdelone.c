@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-void                ft_dlstdelone(t_dlst **lst)
+void	ft_dlstdelone(t_dlst **lst)
 {
-    t_dlst *tmp;
+	t_dlst *tmp;
 
-    if (*lst)
-    {
-        tmp = *lst;
-        if ((*lst)->back)
-            (*lst)->back->next = (*lst)->next;
-        if ((*lst)->next)
-            (*lst)->next->back = (*lst)->back;
-        free(tmp);
-        tmp = NULL;
-    }
+	if (*lst)
+	{
+		tmp = *lst;
+		if ((*lst)->back)
+			(*lst)->back->next = (*lst)->next;
+		if ((*lst)->next)
+			(*lst)->next->back = (*lst)->back;
+		free(tmp);
+		tmp = NULL;
+	}
 }

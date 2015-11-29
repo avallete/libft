@@ -105,7 +105,8 @@ char					**ft_strsplit(char const *s, char c)
 			ft_bzero(result[i], l[i] + 1);
 			while (*s == c)
 				s++;
-			ft_memcpy(result[i], s, l[i]), s += l[i++];
+			ft_memcpy(result[i], s, l[i]);
+			s += l[i++];
 		}
 		free(l);
 	}

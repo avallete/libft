@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-t_dlst  *ft_dlstnew(void *content, size_t content_size)
+t_dlst	*ft_dlstnew(void *content, size_t content_size)
 {
-    t_dlst *new;
+	t_dlst *new;
 
-    if ((new = (t_dlst*)malloc(sizeof(t_dlst))))
-    {
-        new->content = content;
-        new->content_size = content_size;
-        new->next = NULL;
-        new->back = NULL;
-    }
-    return (new);
+	if ((new = (t_dlst*)malloc(sizeof(t_dlst))))
+	{
+		new->content = content;
+		new->content_size = content_size;
+		new->next = NULL;
+		new->back = NULL;
+	}
+	return (new);
 }

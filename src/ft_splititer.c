@@ -20,6 +20,9 @@ void	split_iter(char **split, void *(*f)(char *str))
 	if (split)
 	{
 		while (split[i])
-			f(split[i]), i++;
+		{
+			f(split[i]);
+			i++;
+		}
 	}
 }

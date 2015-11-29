@@ -12,12 +12,17 @@
 
 #include <ft_printf.h>
 
-void arg_is_mod(t_flags *flags, int *i)
+void	arg_is_mod(t_flags *flags, int *i)
 {
 	if (flags->type == '%')
 	{
-		flags->min_size - 1 > 0 ? (fill_it(flags, flags->min_size - 1), \
-				i[1] += flags->min_size - 1) : (i[1] += 0);
+		if (flags->min_size - 1 > 0)
+		{
+			fill_it(flags, flags->min_size - 1);
+			i[1] += flags->min_size - 1;
+		}
+		else
+			i[1] += 0;
 		ft_putchar('%');
 		i[1] += 1;
 	}

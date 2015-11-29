@@ -23,13 +23,13 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef struct      s_dlst
+typedef struct		s_dlst
 {
-    void            *content;
-    size_t          content_size;
-    struct s_dlst   *next;
-    struct s_dlst   *back;
-}                   t_dlst;
+	void			*content;
+	size_t			content_size;
+	struct s_dlst	*next;
+	struct s_dlst	*back;
+}					t_dlst;
 
 typedef struct		s_tree
 {
@@ -49,7 +49,7 @@ size_t				ft_strlcat(char *s1, const char *s2, size_t size);
 char				*ft_strchr(const char *s, int c);
 void				ft_strclr(char *s);
 int					ft_strcmp(const char *s1, const char *s2);
-int                 ft_stralcmp(const char *s1, const char *s2);
+int					ft_stralcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strcpy(char *dest, const char *src);
 void				ft_strdel(char **as);
@@ -86,7 +86,7 @@ void				ft_splitprint(char **split);
 void				ft_putsterr(char *str);
 void				ft_puterrdl(char *str);
 void				ft_printtab(int *tab, int max);
-void                ft_putnstr(char* str, unsigned int size);
+void				ft_putnstr(char *str, unsigned int size);
 
 /*
 ** Tree Functions
@@ -148,12 +148,12 @@ size_t				ft_lstsize(t_list *list);
 /*
 ** Double linked list functions
 */
-t_dlst              *ft_dlstnew(void *content, size_t content_size);
-void                ft_dlstadd(t_dlst **lst, t_dlst *new);
-void                ft_dlstdelone(t_dlst **lst);
-void                ft_dlstpushback(t_dlst **lst, t_dlst *new);
-void                ft_dlstiter(t_dlst *list, void (*f)(t_dlst *elem));
-void                ft_circlelist(t_dlst **list);
+t_dlst				*ft_dlstnew(void *content, size_t content_size);
+void				ft_dlstadd(t_dlst **lst, t_dlst *new);
+void				ft_dlstdelone(t_dlst **lst);
+void				ft_dlstpushback(t_dlst **lst, t_dlst *new);
+void				ft_dlstiter(t_dlst *list, void (*f)(t_dlst *elem));
+void				ft_circlelist(t_dlst **list);
 
 /*
 ** Split functions

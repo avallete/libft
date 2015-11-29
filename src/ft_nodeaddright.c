@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void ft_nodeaddright(t_tree *new, t_tree **tree)
+void	ft_nodeaddright(t_tree *new, t_tree **tree)
 {
 	t_tree *begin;
 

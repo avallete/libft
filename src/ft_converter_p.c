@@ -42,9 +42,11 @@ void	print_ptr(t_flags *flags, va_list list, int *i)
 	pt = va_arg(list, unsigned long int);
 	ft_linttohexa(pt, str, HEXMIN);
 	size = ft_strlen(str);
-	flags->min_size - size > 0 ? \
-	(fill_it(flags, flags->min_size - size), i[1] += flags->min_size - size) :
-	(size += 0);
+	if (flags->min_size - size > 0)
+	{
+		fill_it(flags, flags->min_size - size);
+		i[1] += flags->min_size - size;
+	}
 	ft_putstr(str);
 	if ((flags->optdot && flags->prec) && flags->prec > size)
 	{
@@ -71,9 +73,11 @@ void	print_rev_ptr(t_flags *flags, va_list list, int *i)
 		ft_filler('0', flags->prec - (size - 2));
 		i[1] += flags->prec - (size - 2);
 	}
-	flags->min_size - size > 0 ? \
-	(fill_it(flags, flags->min_size - size), i[1] += flags->min_size - size) :
-	(size += 0);
+	if (flags->min_size - size > 0)
+	{
+		fill_it(flags, flags->min_size - size);
+		i[1] += flags->min_size - size;
+	}
 	i[1] += ft_strlen(str);
 }
 

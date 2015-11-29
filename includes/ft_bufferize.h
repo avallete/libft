@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BUFFERIZE
-# define FT_BUFFERIZE
+#ifndef FT_BUFFERIZE_H
+# define FT_BUFFERIZE_H
 # include "libft.h"
 # include <stdbool.h>
 # define BUFFERIZE_SIZE 4096
 
-int     ft_bufferize(int fd, char *str, bool flush);
+int ft_bufferize(int fd, char *str, bool flush);
 #endif

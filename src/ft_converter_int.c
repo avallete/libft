@@ -16,7 +16,15 @@ void	print_int_rev(t_flags *flags, int *i, int size, int c)
 {
 	print_plus(flags, i, c, &size);
 	if (flags->optzero || flags->prec)
-		c < 0 ? (c = -c, ft_putchar('-')) : (c += 0);
+	{
+		if (c < 0)
+		{
+			c = -c;
+			ft_putchar('-');
+		}
+		else
+			c += 0;
+	}
 	if (flags->prec)
 		ft_filler('0', flags->prec - ft_nbrlen(c));
 	ft_putnbr(c);
@@ -30,7 +38,13 @@ void	print_no_min(t_flags *flags, int *i, int c)
 
 	size = 0;
 	print_plus(flags, i, c, &size);
-	c < 0 ? (c = -c, ft_putchar('-')) : (c += 0);
+	if (c < 0)
+	{
+		c = -c;
+		ft_putchar('-');
+	}
+	else
+		c += 0;
 	if (flags->prec)
 		ft_filler('0', flags->prec - ft_nbrlen(c));
 	ft_putnbr(c);

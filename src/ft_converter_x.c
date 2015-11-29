@@ -49,8 +49,10 @@ void	print_x(t_flags *flags, va_list list, int *i)
 
 	ft_bzero(str, 16);
 	cast_hexa(&pt, list, flags);
-	if (pt > 0 && flags->optsharp)
-		flags->type == 'x' ? ft_putstr("0x") : ft_putstr("0X"), i[1] += 2;
+	if (pt > 0 && flags->optsharp && flags->type == 'x' && i[1]++ && i[1]++)
+		ft_putstr("0x");
+	else
+		ft_putstr("0X");
 	flags->type == 'x' ? ft_inttohexa(pt, str, HEXMIN) :\
 	ft_inttohexa(pt, str, HEXMAJ);
 	if (flags->min_size > (int)(flags->prec + ft_strlen(str)))

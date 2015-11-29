@@ -19,5 +19,8 @@ void	ft_printtab(int *tab, int max)
 
 	i = 0;
 	while (i < max)
-		ft_printf("tab [%d][%d]\n", i, tab[i]), i++;
+	{
+		ft_printf("tab [%d][%d]\n", i, tab[i]);
+		i++;
+	}
 }

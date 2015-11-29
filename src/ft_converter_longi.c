@@ -17,20 +17,26 @@ void	print_longint_opt(t_flags *flags, long int l, int size, int *i)
 	i[1] += flags->min_size - size;
 	if (flags->optmin)
 	{
-		flags->optmin && l > 0 ? (ft_putchar('+'), i[1]++) : (i[1] += 0);
+		if (flags->optmin && l > 0 && i[1]++)
+			ft_putchar('+');
 		if (flags->prec)
 			ft_filler('0', flags->prec - ft_longnbrlen(l));
-		l < 0 ? (ft_putchar('-'), l = -l) : (l += 0);
+		l < 0 ? (ft_putchar('-')) : (l += 0);
+		if (l < 0)
+			l = -l;
 		ft_putlongnbr(l);
 		fill_it(flags, flags->min_size - size);
 	}
 	else
 	{
 		fill_it(flags, flags->min_size - size);
-		flags->optmin && l > 0 ? (ft_putchar('+'), i[1]++) : (i[1] += 0);
+		if (flags->optmin && l > 0 && i[1]++)
+			ft_putchar('+');
 		if (flags->prec)
 			ft_filler('0', flags->prec - ft_longnbrlen(l));
-		l < 0 ? (ft_putchar('-'), l = -l) : (l += 0);
+		l < 0 ? (ft_putchar('-')) : (l += 0);
+		if (l < 0)
+			l = -l;
 		ft_putlongnbr(l);
 	}
 }
@@ -75,7 +81,8 @@ void	print_longi(t_flags *flags, va_list list, int *i)
 				ft_putchar('+');
 				size++;
 			}
-			l < 0 ? (ft_putchar('-'), l *= -1, size++) : (l += 0);
+			if (l < 0 && write(1, "c", 1) && size++)
+				l *= -1;
 			ft_putlongnbr(l);
 		}
 	}
