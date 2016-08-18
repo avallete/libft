@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:54 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/28 14:38:21 by avallete         ###   ########.fr       */
+/*   Updated: 2016/06/25 19:18:10 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ size_t				ft_strlcat(char *s1, const char *s2, size_t size);
 char				*ft_strchr(const char *s, int c);
 void				ft_strclr(char *s);
 int					ft_strcmp(const char *s1, const char *s2);
-int					ft_stralcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strcpy(char *dest, const char *src);
 void				ft_strdel(char **as);
@@ -71,6 +70,8 @@ char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *s1, const char *s2);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
+int					ft_strendby(const char *str, const char *niddle);
+void				ft_strfill(char *str, char c, size_t len);
 
 /*
 ** Write functions
@@ -86,7 +87,6 @@ void				ft_splitprint(char **split);
 void				ft_putsterr(char *str);
 void				ft_puterrdl(char *str);
 void				ft_printtab(int *tab, int max);
-void				ft_putnstr(char *str, unsigned int size);
 
 /*
 ** Tree Functions
@@ -149,11 +149,15 @@ size_t				ft_lstsize(t_list *list);
 ** Double linked list functions
 */
 t_dlst				*ft_dlstnew(void *content, size_t content_size);
+t_dlst				*ft_dlst_get_elem_index(t_dlst *lst, unsigned int index);
 void				ft_dlstadd(t_dlst **lst, t_dlst *new);
-void				ft_dlstdelone(t_dlst **lst);
+void				ft_dlstdelone(t_dlst **lst, void(*destructor)(void *));
 void				ft_dlstpushback(t_dlst **lst, t_dlst *new);
 void				ft_dlstiter(t_dlst *list, void (*f)(t_dlst *elem));
 void				ft_circlelist(t_dlst **list);
+size_t				ft_dlst_content_len(t_dlst *lst, size_t(*len_count)(void*));
+size_t				ft_dlst_content_max(t_dlst *lst, size_t(*len_count)(void*));
+int					ft_dlst_get_node_index(t_dlst *list_begin, t_dlst *node);
 
 /*
 ** Split functions

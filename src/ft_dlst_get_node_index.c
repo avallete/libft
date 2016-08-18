@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_dlst_get_node_index.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/12 10:22:13 by avallete          #+#    #+#             */
-/*   Updated: 2016/06/21 18:02:37 by avallete         ###   ########.fr       */
+/*   Created: 2016/06/23 19:20:10 by avallete          #+#    #+#             */
+/*   Updated: 2016/06/23 19:27:04 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <libft.h>
+
+int	ft_dlst_get_node_index(t_dlst *list_begin, t_dlst *node)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	int i;
+
+	i = 0;
+	while (list_begin)
+	{
+		if (list_begin == node)
+			return (i);
+		++i;
+		list_begin = list_begin->next;
+	}
+	return (-1);
 }

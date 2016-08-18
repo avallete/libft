@@ -6,13 +6,13 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 11:15:04 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/03 13:10:13 by avallete         ###   ########.fr       */
+/*   Updated: 2016/06/21 17:44:25 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strndup(const char *s, size_t n)
+char	*ft_strndup(const char *s, size_t n)
 {
 	char	*scop;
 

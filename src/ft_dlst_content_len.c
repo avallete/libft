@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_dslt_content_len.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/12 10:22:13 by avallete          #+#    #+#             */
-/*   Updated: 2016/06/21 18:02:37 by avallete         ###   ########.fr       */
+/*   Created: 2016/06/14 12:24:06 by avallete          #+#    #+#             */
+/*   Updated: 2016/06/21 19:04:27 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <libft.h>
+
+size_t	ft_dlst_content_len(t_dlst *lst, size_t (*len_count)(void*))
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	return (len_count(lst->content));
 }

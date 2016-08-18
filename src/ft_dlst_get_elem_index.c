@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_dlst_get_index.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/12 10:22:13 by avallete          #+#    #+#             */
-/*   Updated: 2016/06/21 18:02:37 by avallete         ###   ########.fr       */
+/*   Created: 2016/06/15 18:24:11 by avallete          #+#    #+#             */
+/*   Updated: 2016/06/21 19:03:12 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <libft.h>
+
+t_dlst	*ft_dlst_get_elem_index(t_dlst *lst, unsigned int index)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	while (lst && index)
+	{
+		--index;
+		lst = lst->next;
+	}
+	return (lst);
 }

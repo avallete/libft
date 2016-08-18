@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strfill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/12 10:22:13 by avallete          #+#    #+#             */
-/*   Updated: 2016/06/21 18:02:37 by avallete         ###   ########.fr       */
+/*   Created: 2016/06/25 19:13:25 by avallete          #+#    #+#             */
+/*   Updated: 2016/08/03 12:58:50 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <libft.h>
+
+/*
+** Fill the str with the char c. Add a '\0' at end.
+*/
+
+void	ft_strfill(char *str, char c, size_t len)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	size_t i;
+
+	i = 0;
+	while (i < len)
+	{
+		str[i] = c;
+		++i;
+	}
+	str[i] = '\0';
 }

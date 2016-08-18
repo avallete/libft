@@ -6,13 +6,13 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#    Updated: 2015/08/28 14:38:46 by avallete         ###   ########.fr        #
+#*   Updated: 2016/06/25 19:16:09 by avallete         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
 SRC_PATH=./src/
-SRC_NAME=ft_argument.c\
-			ft_atoi.c\
+SRC_NAME=ft_atoi.c\
+			ft_bufferize.c\
 			ft_bzero.c\
 			ft_tabstrcmp.c\
 			ft_splitprint.c\
@@ -24,29 +24,13 @@ SRC_NAME=ft_argument.c\
 			ft_secfree.c\
 			ft_putsterr.c\
 			ft_puterrdl.c\
-			ft_putnstr.c\
-			ft_check.c\
-			ft_converter_char.c\
-			ft_converter_int.c\
-			ft_converter_longi.c\
-			ft_converter_mod.c\
-			ft_converter_o.c\
-			ft_converter_p.c\
-			ft_converter_str.c\
-			ft_converter_unsigned.c\
-			ft_converter_us.c\
-			ft_converter_wchar.c\
-			ft_converter_x.c\
 			ft_filler.c\
-			ft_fillint.c\
 			ft_isalnum.c\
 			ft_isalpha.c\
 			ft_isascii.c\
 			ft_isdigit.c\
 			ft_isprint.c\
 			ft_itoa.c\
-			ft_linttooct.c\
-			ft_longnbrlen.c\
 			ft_lstadd.c\
 			ft_lstdel.c\
 			ft_lstdelone.c\
@@ -61,6 +45,10 @@ SRC_NAME=ft_argument.c\
 			ft_dlstdelone.c\
 			ft_dlstiter.c\
 			ft_dlstpushback.c\
+			ft_dlst_content_len.c\
+			ft_dlst_content_max.c\
+      		ft_dlst_get_elem_index.c\
+      		ft_dlst_get_node_index.c\
 			ft_circlelist.c\
 			ft_memalloc.c\
 			ft_memccpy.c\
@@ -70,34 +58,28 @@ SRC_NAME=ft_argument.c\
 			ft_memdel.c\
 			ft_memmove.c\
 			ft_memset.c\
-			ft_misc.c\
 			ft_nbrlen.c\
 			ft_nodeaddleft.c\
 			ft_nodeaddright.c\
-			ft_octal_err.c\
-			ft_print_wchar.c\
-			ft_printf.c\
 			ft_putchar.c\
 			ft_putchar_fd.c\
 			ft_putendl.c\
 			ft_putendl_fd.c\
-			ft_putlongnbr.c\
 			ft_putnbr.c\
 			ft_putnbr_fd.c\
 			ft_putstr.c\
 			ft_putstr_fd.c\
-			ft_putwnstr.c\
-			ft_putwstr.c\
 			ft_realloc.c\
 			ft_strcat.c\
 			ft_strchr.c\
 			ft_strclr.c\
 			ft_strcmp.c\
-			ft_stralcmp.c\
 			ft_strcpy.c\
 			ft_strdel.c\
 			ft_strdup.c\
 			ft_strequ.c\
+			ft_strendby.c\
+			ft_strfill.c\
 			ft_striter.c\
 			ft_striteri.c\
 			ft_strjoin.c\
@@ -120,32 +102,30 @@ SRC_NAME=ft_argument.c\
 			ft_tolower.c\
 			ft_toupper.c\
 			ft_treenew.c\
-			ft_wcharlen.c\
-			ft_wnstrlen.c\
-			get_next_line.c\
-			ft_printtab.c\
-			ft_wstrlen.c\
-			ft_bufferize.c
+			get_next_line.c
 OBJ_PATH =./obj/
 OBJ_NAME=$(SRC_NAME:.c=.o)
 INC_PATH=./includes/
 INC_NAME=libft.h\
 		get_next_line.h\
-		ft_printf.h\
 		ft_bufferize.h
 SRC=$(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ=$(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INCF=$(addprefix $(INC_PATH), $(INC_NAME))
 INC=$(addprefix -I, $(INC_PATH))
-CFLAGS=-Wall -Wextra -Werror -g
+CFLAGS=-Wall -Wextra -Werror
 CC=gcc
-NAME=libftprintf.a
+NAME=libft.a
 RED=\033[0;31m
 LBLUE=\033[34m
 GREEN=\033[32m
 CYAN=\033[0;36m
 ORANGE=\033[0;33m
 NC=\033[0m
+
+debug: CFLAGS=-g3 -O0
+
+debug: all
 
 all: $(NAME)
 

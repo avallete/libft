@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/14 14:19:43 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/14 14:20:10 by avallete         ###   ########.fr       */
+/*   Updated: 2016/06/21 17:50:59 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ void	split_iter(char **split, void *(*f)(char *str))
 	if (split)
 	{
 		while (split[i])
-		{
-			f(split[i]);
-			i++;
-		}
+			f(split[i++]);
 	}
 }

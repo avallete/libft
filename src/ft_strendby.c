@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strendby.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 14:41:36 by avallete          #+#    #+#             */
-/*   Updated: 2016/06/21 17:41:49 by avallete         ###   ########.fr       */
+/*   Created: 2016/06/25 15:30:37 by avallete          #+#    #+#             */
+/*   Updated: 2016/06/25 16:02:16 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-char	*ft_strstr(const char *s1, const char *s2)
+int		ft_strendby(const char *str, const char *niddle)
 {
-	size_t i;
-	size_t e;
+	size_t size_str;
+	size_t size_niddle;
 
-	i = 0;
-	e = 0;
-	if (s2[0] == '\0' || s2 == NULL)
-		return ((char*)s1);
-	if (s1 && s2)
+	size_str = ft_strlen(str);
+	size_niddle = ft_strlen(niddle);
+	if (size_str < size_niddle)
+		return (-1);
+	while (size_niddle)
 	{
-		while (s1[i] != '\0')
-		{
-			e = 0;
-			while (s1[i] == s2[e])
-			{
-				e++;
-				i++;
-				if (e == ft_strlen(s2))
-					return ((char*)&s1[i - (ft_strlen(s2))]);
-			}
-			i++;
-		}
+		if (str[size_str--] != niddle[size_niddle--])
+			return (1);
 	}
-	return (NULL);
+	return (str[size_str] != niddle[size_niddle]);
 }

@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/13 17:26:23 by avallete          #+#    #+#             */
-/*   Updated: 2015/02/18 12:53:06 by avallete         ###   ########.fr       */
+/*   Updated: 2016/06/21 17:49:52 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ void	ft_splitprint(char **split)
 	if (split)
 	{
 		while (split[i])
-		{
-			ft_putendl(split[i]);
-			i++;
-		}
+			ft_putendl(split[i++]);
 	}
 }

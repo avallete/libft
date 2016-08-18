@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 16:11:38 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/23 13:14:36 by avallete         ###   ########.fr       */
+/*   Updated: 2016/06/21 17:37:06 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,20 @@ static unsigned int	check_line(char *buf)
 	return (i);
 }
 
-static void			join_buf(char **buf2, char **buf)
+static void			join_buf(int n, char **buf2, char **buf)
 {
 	char	*tmp;
 	char	*tmp2;
 
 	tmp = NULL;
 	tmp2 = NULL;
+	*buf2[n] = '\0';
 	if (*buf2 && **buf2)
 	{
 		tmp2 = ft_strdup(*buf2);
 		if (*buf)
-		{
 			tmp = ft_strdup(*buf);
-			free(*buf);
-		}
+		ft_secfree(*buf);
 		*buf = ft_strjoin(tmp, tmp2);
 		ft_secfree(tmp);
 		ft_secfree(tmp2);
@@ -61,7 +60,7 @@ static int			return_line(char **buf, char **buf2, char **line)
 	tmp = ft_strdup(*buf + i);
 	free(*buf);
 	*buf = tmp;
-	ft_secfree(buf2);
+	ft_secfree(*buf2);
 	return (1);
 }
 
@@ -72,17 +71,14 @@ int					get_next_line(int const fd, char **line)
 	static char		*buf = NULL;
 
 	buf2 = NULL;
-	if (fd < 0 || (!(line)) || BUFF_SIZE < 1)
+	if (fd <= 0 || (!(line)) || BUFF_SIZE < 1)
 		return (-1);
 	if ((!(buf2 = (char*)malloc(sizeof(char) * BUFF_SIZE + 1))))
 		return (-1);
 	while (((f = read(fd, buf2, BUFF_SIZE)) > 0) && (!(ft_strchr(buf2, '\n'))))
-	{
-		buf2[f] = '\0';
-		join_buf(&buf2, &buf);
-	}
+		join_buf(f, &buf2, &buf);
 	if (buf2 && *buf2 && f > 0)
-		join_buf(&buf2, &buf);
+		join_buf(f, &buf2, &buf);
 	if (f < 0)
 		return (-1);
 	if (buf && buf[0] != '\0')
