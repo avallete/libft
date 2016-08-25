@@ -6,7 +6,7 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#*   Updated: 2016/06/25 19:16:09 by avallete         ###   ########.fr       *#
+#*   Updated: 2016/08/25 16:10:27 by avallete         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,9 @@ SRC_NAME=ft_atoi.c\
 			ft_strdel.c\
 			ft_strdup.c\
 			ft_strequ.c\
+			ft_stroccur.c\
 			ft_strendby.c\
+			ft_strstartby.c\
 			ft_strfill.c\
 			ft_striter.c\
 			ft_striteri.c\

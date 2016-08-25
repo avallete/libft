@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:54 by avallete          #+#    #+#             */
-/*   Updated: 2016/06/25 19:18:10 by avallete         ###   ########.fr       */
+/*   Updated: 2016/08/25 16:02:22 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ char				*ft_strchr(const char *s, int c);
 void				ft_strclr(char *s);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_stroccur(const char *s1, const char *s2);
 char				*ft_strcpy(char *dest, const char *src);
 void				ft_strdel(char **as);
 char				*ft_strdup(const char *s);
@@ -71,6 +72,7 @@ char				*ft_strstr(const char *s1, const char *s2);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strtrim(char const *s);
 int					ft_strendby(const char *str, const char *niddle);
+int					ft_strstartby(const char *str, const char *niddle);
 void				ft_strfill(char *str, char c, size_t len);
 
 /*
