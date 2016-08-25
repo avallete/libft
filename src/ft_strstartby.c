@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/24 17:05:25 by avallete          #+#    #+#             */
-/*   Updated: 2016/08/24 17:10:47 by avallete         ###   ########.fr       */
+/*   Updated: 2016/08/25 16:26:36 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 **					Return 0 if it does.
 */
 
-int					ft_strendby(const char *str, const char *niddle)
+int					ft_strstartby(const char *str, const char *niddle)
 {
 	if (ft_strlen(str) < ft_strlen(niddle))
 		return (-1);
