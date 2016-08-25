@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:36 by avallete          #+#    #+#             */
-/*   Updated: 2016/06/21 17:45:51 by avallete         ###   ########.fr       */
+/*   Updated: 2016/08/26 00:37:52 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (s[i] != '\0')
-		i++;
+		++i;
 	return (i);
 }
