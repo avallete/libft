@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/25 15:30:37 by avallete          #+#    #+#             */
-/*   Updated: 2016/08/24 17:08:27 by avallete         ###   ########.fr       */
+/*   Updated: 2016/08/30 19:01:24 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 **		Search if the end of str match with niddle.
 **		Return 0 if match.
 */
+
 int		ft_strendby(const char *str, const char *niddle)
 {
 	size_t size_str;
