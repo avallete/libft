@@ -6,78 +6,60 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 16:11:38 by avallete          #+#    #+#             */
-/*   Updated: 2016/08/26 00:13:35 by avallete         ###   ########.fr       */
+/*   Updated: 2016/09/06 22:13:06 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static unsigned int	check_line(char *buf)
+static int			fd_cmp(void *data, void *fd)
 {
-	unsigned int i;
-
-	i = 0;
-	while (buf[i] != '\0')
-	{
-		if (buf[i] == '\n')
-		{
-			buf[i] = '\0';
-			return (i + 1);
-		}
-		i++;
-	}
-	return (i);
+	if (((t_file*)data)->fd == *((int*)fd))
+		return (0);
+	return (-1);
 }
 
-static void			join_buf(int n, char **buf2, char **buf)
+static	t_file		*new_file(int fd)
 {
-	char	*tmp;
-	char	*tmp2;
+	t_file *new;
 
-	(void)n;
-	tmp = NULL;
-	tmp2 = NULL;
-	(*buf2)[n] = '\0';
-	if (*buf2 && **buf2)
-	{
-		tmp2 = ft_strdup(*buf2);
-		if (*buf)
-			tmp = ft_strdup(*buf);
-		ft_secfree(*buf);
-		*buf = ft_strjoin(tmp, tmp2);
-		ft_secfree(tmp);
-		ft_secfree(tmp2);
-	}
+	new = (t_file*)malloc(sizeof(t_file));
+	new->fd = fd;
+	new->fpos = 0;
+	new->remainbuf = NULL;
+	return (new);
 }
 
-static int			return_line(char **buf, char **buf2, char **line)
+t_list				*find_or_create_node(t_list **lst, int fd)
 {
-	unsigned int	i;
-	char			*tmp;
+	t_list *ret;
 
-	tmp = NULL;
-	i = check_line(*buf);
-	*line = ft_strdup(*buf);
-	tmp = ft_strdup(*buf + i);
-	free(*buf);
-	*buf = tmp;
-	ft_secfree(*buf2);
-	return (1);
+	ret = NULL;
+	if (*lst && (ret = ft_lstfind(*lst, fd_cmp, &fd)))
+		return (ret);
+	else if (*lst == NULL)
+		*lst = ft_lstnew(new_file(fd), sizeof(t_file));
+	else
+		ft_lstadd(lst, ft_lstnew(new_file(fd), sizeof(t_file)));
+	return (*lst);
 }
 
 int					get_next_line(int const fd, char **line)
 {
-	int				f;
-	char			*buf2;
-	static char		*buf = NULL;
+	static	t_list	*list = NULL;
+	char			readbuf[BUFF_SIZE + 1];
+	t_list			*node;
+	t_file			*file;
 
-	buf2 = NULL;
 	if (fd < 0 || (!(line)) || BUFF_SIZE < 1)
 		return (-1);
-	if ((!(buf2 = (char*)malloc(sizeof(char) * BUFF_SIZE + 1))))
-		return (-1);
-	while (((f = read(fd, buf2, BUFF_SIZE)) > 0) && (!(ft_strchr(buf2, '\n'))))
-		join_buf(f, &buf2, &buf);
+	file = (t_file*)((find_or_create_node(&list, fd))->content);
+	while ((file->fpos = read(fd, readbuf, BUFF_SIZE)) > 0)
+	{
+		if (file->fpos < 0)
+			return (-1);
+		readbuf[file->fpos] = '\0';
+	}
 	if (buf2 && *buf2 && f > 0)
 		join_buf(f, &buf2, &buf);
 	if (f < 0)
