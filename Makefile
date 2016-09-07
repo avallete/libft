@@ -6,7 +6,7 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#*   Updated: 2016/08/25 16:10:27 by avallete         ###   ########.fr       *#
+#*   Updated: 2016/09/06 19:43:40 by avallete         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRC_NAME=ft_atoi.c\
 			ft_isprint.c\
 			ft_itoa.c\
 			ft_lstadd.c\
+			ft_lstfind.c\
 			ft_lstdel.c\
 			ft_lstdelone.c\
 			ft_lstiter.c\
