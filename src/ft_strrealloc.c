@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strrealloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/04 11:31:31 by avallete          #+#    #+#             */
-/*   Updated: 2016/09/08 17:12:43 by avallete         ###   ########.fr       */
+/*   Created: 2016/09/08 14:02:46 by avallete          #+#    #+#             */
+/*   Updated: 2016/09/08 14:04:24 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <libft.h>
-# define BUFF_SIZE 3
+#include "libft.h"
 
-typedef struct		s_file
+char *ft_strrealloc(char *old_str, char *new_str)
 {
-	int				fd;
-	int				fpos;
-	char			*remainbuf;
-}					t_file;
-
-int					get_next_line(int const fd, char **line);
-#endif
+	ft_secfree(old_str);
+	return (new_str);
+}

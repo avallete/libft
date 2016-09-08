@@ -6,11 +6,12 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 16:11:38 by avallete          #+#    #+#             */
-/*   Updated: 2016/09/06 22:13:06 by avallete         ###   ########.fr       */
+/*   Updated: 2016/09/08 17:49:06 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
 
 static int			fd_cmp(void *data, void *fd)
 {
@@ -48,26 +49,28 @@ int					get_next_line(int const fd, char **line)
 {
 	static	t_list	*list = NULL;
 	char			readbuf[BUFF_SIZE + 1];
-	t_list			*node;
+	char			*endline;
 	t_file			*file;
 
 	if (fd < 0 || (!(line)) || BUFF_SIZE < 1)
 		return (-1);
 	file = (t_file*)((find_or_create_node(&list, fd))->content);
-	while ((file->fpos = read(fd, readbuf, BUFF_SIZE)) > 0)
+	*line = NULL;
+	while	(((file->fpos = read(fd, readbuf, BUFF_SIZE)) > 0))
 	{
 		if (file->fpos < 0)
 			return (-1);
 		readbuf[file->fpos] = '\0';
+		endline = ft_strchr(readbuf, '\n');
+		if (!endline)
+			*line = ft_strrealloc(*line, ft_strjoin(*line, readbuf));
+		else
+		{
+			*endline = '\0';
+			*line = ft_strrealloc(*line, ft_strjoin(*line, readbuf));
+			file->remainbuf = ft_strrealloc(file->remainbuf, ft_strdup(endline + 1));
+			return (1);
+		}
 	}
-	if (buf2 && *buf2 && f > 0)
-		join_buf(f, &buf2, &buf);
-	if (f < 0)
-		return (-1);
-	if (buf && buf[0] != '\0')
-		return (return_line(&buf, &buf2, line));
-	ft_secfree(buf2);
-	ft_secfree(buf);
-	*line = NULL;
 	return (0);
 }

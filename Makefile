@@ -6,7 +6,7 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#*   Updated: 2016/09/06 19:43:40 by avallete         ###   ########.fr       *#
+#*   Updated: 2016/09/08 14:04:39 by avallete         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,7 @@ SRC_NAME=ft_atoi.c\
 			ft_putstr_fd.c\
 			ft_realloc.c\
 			ft_strcat.c\
+			ft_strrealloc.c\
 			ft_strchr.c\
 			ft_strclr.c\
 			ft_strcmp.c\
