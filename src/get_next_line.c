@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 16:11:38 by avallete          #+#    #+#             */
-/*   Updated: 2016/09/18 00:21:33 by avallete         ###   ########.fr       */
+/*   Updated: 2016/09/18 00:43:08 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void			bufferize(char **dest, char *content)
 	*dest = ret;
 }
 
-static	char		*get_line(char **buf)
+static char			*get_line(char **buf)
 {
 	char *truncbuf;
 	char *linepos;
@@ -45,24 +45,57 @@ static	char		*get_line(char **buf)
 	return (ret);
 }
 
+static t_list		*file_exist(t_list *list, int fd)
+{
+	while (list)
+	{
+		if ((t_line*)(list->data)->fd == fd)
+			return (list);
+		list = list->next;
+	}
+	return (NULL);
+}
+
+static t_list		*handle_multiple_fd(t_list **list, int fd)
+{
+	t_line			node;
+	t_list			*ret;
+
+	if (*list && (ret = file_exist(*list, fd)))
+		return (ret);
+	else
+	{
+		node.buf = NULL;
+		node.fd = fd;
+		if (!(*list))
+			*list = ft_lstnew(&node, sizeof(t_line));
+		else
+			ft_lstadd(list, ft_lstnew(&node, sizeof(t_line)));
+		return (*list);
+	}
+}
+
 int					get_next_line(int const fd, char **line)
 {
 	int				f;
 	char			tmpbuf[BUFF_SIZE + 1];
-	static char		*buf = NULL;
+	static t_list	*list = NULL;
+	t_list			*node;
 
 	if (fd < 0 || (!(line)) || BUFF_SIZE < 1)
 		return (-1);
+	node = handle_multiple_fd(&list, fd);
 	tmpbuf[BUFF_SIZE] = '\0';
-	while ((!(ft_strchr(buf, '\n'))) && ((f = read(fd, tmpbuf, BUFF_SIZE)) > 0))
+	while ((!(ft_strchr((t_line*)(node->data)->buf, '\n'))) &&\
+			((f = read(fd, tmpbuf, BUFF_SIZE)) > 0))
 	{
 		tmpbuf[f] = 0;
-		bufferize(&buf, (char*)(tmpbuf));
+		bufferize(&((t_line*)(node->data)->buf), (char*)(tmpbuf));
 	}
 	if (f < 0)
 		return (-1);
-	*line = get_line(&buf);
-	if (buf)
+	*line = get_line(&((t_line*)(node->data)->buf));
+	if (((t_line*)(node->data)->buf))
 		return (1);
 	return (0);
 }
