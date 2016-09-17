@@ -6,7 +6,7 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#*   Updated: 2016/09/06 19:43:40 by avallete         ###   ########.fr       *#
+#*   Updated: 2016/09/17 21:59:52 by avallete         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,7 +129,7 @@ NC=\033[0m
 
 all: $(NAME)
 
-$(NAME):$(OBJ)
+$(NAME):$(OBJ) $(INCF)
 	@echo "${GREEN}Compile $(NAME) with $(CFLAGS)${NC}";
 	@echo "${LBLUE}ar rc $(NAME)${NC}"
 	@ar rc $(NAME) $(OBJ)
