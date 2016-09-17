@@ -6,7 +6,7 @@
 /*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 16:11:38 by avallete          #+#    #+#             */
-/*   Updated: 2016/09/17 21:32:39 by avallete         ###   ########.fr       */
+/*   Updated: 2016/09/18 00:21:33 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,18 @@ static	char		*get_line(char **buf)
 
 	truncbuf = NULL;
 	ret = NULL;
-	linepos = ft_strchr(*buf, '\n');
-	if (linepos)
+	if (*buf)
 	{
-		*linepos = '\0';
-		truncbuf = ft_strdup(linepos + 1);
+		linepos = ft_strchr(*buf, '\n');
+		if (linepos)
+		{
+			*linepos = '\0';
+			truncbuf = ft_strdup(linepos + 1);
+		}
+		ret = ft_strdup(*buf);
+		ft_secfree(*buf);
+		*buf = truncbuf;
 	}
-	ret = ft_strdup(*buf);
-	ft_secfree(*buf);
-	*buf = truncbuf;
 	return (ret);
 }
 

@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/06 19:44:27 by avallete          #+#    #+#             */
-/*   Updated: 2016/09/06 20:56:00 by avallete         ###   ########.fr       */
+/*   Updated: 2016/09/17 21:46:01 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ t_list				*ft_lstfind(t_list *lst, int (*f)(void*, void*), void *data)
 	}
 	return (NULL);
 }
-
