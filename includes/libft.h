@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:54 by avallete          #+#    #+#             */
-/*   Updated: 2016/09/06 20:57:39 by avallete         ###   ########.fr       */
+/*   Updated: 2016/09/17 21:43:34 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,8 @@ void				ft_lstpushback(t_list **alst, t_list *new);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstlast(t_list *begin_list);
-t_list				*ft_lstfind(t_list *lst, int (*f)(void*, void*), void *data);
+t_list				*ft_lstfind(t_list *lst, int (*f)(void*, void*),\
+								void *data);
 size_t				ft_lstsize(t_list *list);
 
 /*
