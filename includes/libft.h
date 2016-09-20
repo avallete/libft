@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:54 by avallete          #+#    #+#             */
-/*   Updated: 2016/09/17 21:43:34 by avallete         ###   ########.fr       */
+/*   Updated: 2016/09/20 02:34:50 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,7 @@ size_t				ft_lstsize(t_list *list);
 t_dlst				*ft_dlstnew(void *content, size_t content_size);
 t_dlst				*ft_dlst_get_elem_index(t_dlst *lst, unsigned int index);
 void				ft_dlstadd(t_dlst **lst, t_dlst *new);
+void				ft_dlstdel(t_dlst **lst, void (*destructor)(void *));
 void				ft_dlstdelone(t_dlst **lst, void(*destructor)(void *));
 void				ft_dlstpushback(t_dlst **lst, t_dlst *new);
 void				ft_dlstiter(t_dlst *list, void (*f)(t_dlst *elem));

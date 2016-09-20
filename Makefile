@@ -6,7 +6,7 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#*   Updated: 2016/09/17 21:59:52 by avallete         ###   ########.fr       *#
+#*   Updated: 2016/09/20 02:34:29 by avallete         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC_NAME=ft_atoi.c\
 			ft_lstsize.c\
 			ft_dlstnew.c\
 			ft_dlstadd.c\
+			ft_dlstdel.c\
 			ft_dlstdelone.c\
 			ft_dlstiter.c\
 			ft_dlstpushback.c\
