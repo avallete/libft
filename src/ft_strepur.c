@@ -6,28 +6,28 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 18:50:18 by avallete          #+#    #+#             */
-/*   Updated: 2016/09/22 20:59:56 by avallete         ###   ########.fr       */
+/*   Updated: 2016/09/22 21:12:24 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static size_t	epur_len(const char *source)
+static size_t	epur_len(const char *src)
 {
 	int		i;
 	int		space_sequence;
 	size_t	origin_len;
 
 	i = 0;
-	origin_len = ft_strlen(source);
-	while (source[i])
+	origin_len = ft_strlen(src);
+	while (src[i])
 	{
 		++i;
-		if (ft_isspace(source[i]))
+		if (ft_isspace(src[i]))
 		{
 			space_sequence = 0;
-			while (ft_isspace(source[i]))
+			while (ft_isspace(src[i]))
 			{
 				++space_sequence;
 				++i;
@@ -38,33 +38,31 @@ static size_t	epur_len(const char *source)
 	return (origin_len);
 }
 
-char			*ft_strepur(const char *source)
+char			*ft_strepur(const char *src)
 {
 	size_t	newlen;
 	int		i;
 	int		e;
-	char	*epuredstr;
+	char	*epured;
 
 	i = 0;
 	e = 0;
-	epuredstr = NULL;
-	if (source && (newlen = epur_len(source)))
+	epured = NULL;
+	if (src && (newlen = epur_len(src)) && \
+			(epured = ft_strnew(newlen + 1)))
 	{
-		if ((epuredstr = ft_strnew(newlen + 1)))
+		while (src[i])
 		{
-			while (source[i])
+			if (!(ft_isspace(src[i])))
+				epured[e++] = src[i++];
+			else
 			{
-				if (!(ft_isspace(source[i])))
-					epuredstr[e++] = source[i++];
-				else
-				{
-					epuredstr[e++] = ' ';
-					while (ft_isspace(source[i]))
-						++i;
-				}
+				epured[e++] = ' ';
+				while (ft_isspace(src[i]))
+					++i;
 			}
-			epuredstr[e] = '\0';
 		}
+		epured[e] = '\0';
 	}
-	return (epuredstr);
+	return (epured);
 }
