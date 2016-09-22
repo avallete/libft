@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:54 by avallete          #+#    #+#             */
-/*   Updated: 2016/09/22 18:10:01 by avallete         ###   ########.fr       */
+/*   Updated: 2016/09/22 20:05:16 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ char				*ft_strtrim(char const *s);
 int					ft_strendby(const char *str, const char *niddle);
 int					ft_strstartby(const char *str, const char *niddle);
 void				ft_strfill(char *str, char c, size_t len);
+char				*ft_strepur(const char *source);
 
 /*
 ** Write functions
