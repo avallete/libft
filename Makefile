@@ -6,7 +6,7 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#*   Updated: 2016/09/20 02:34:29 by avallete         ###   ########.fr       *#
+#*   Updated: 2016/09/22 18:10:02 by avallete         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRC_NAME=ft_atoi.c\
 			ft_isascii.c\
 			ft_isdigit.c\
 			ft_isprint.c\
+			ft_isspace.c\
 			ft_itoa.c\
 			ft_lstadd.c\
 			ft_lstfind.c\

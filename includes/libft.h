@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:54 by avallete          #+#    #+#             */
-/*   Updated: 2016/09/20 02:34:50 by avallete         ###   ########.fr       */
+/*   Updated: 2016/09/22 18:10:01 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
 
 /*
 ** Memory functions
