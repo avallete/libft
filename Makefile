@@ -6,7 +6,7 @@
 #    By: avallete <avallete@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 11:43:55 by avallete          #+#    #+#              #
-#*   Updated: 2016/09/20 02:34:29 by avallete         ###   ########.fr       *#
+#*   Updated: 2016/09/22 17:49:49 by avallete         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,6 +103,7 @@ SRC_NAME=ft_atoi.c\
 			ft_strstr.c\
 			ft_strsub.c\
 			ft_strtrim.c\
+			ft_isnumber.c\
 			ft_tolower.c\
 			ft_toupper.c\
 			ft_treenew.c\
