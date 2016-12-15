@@ -14,10 +14,7 @@
 
 t_dlst	*ft_dlst_get_elem_index(t_dlst *lst, unsigned int index)
 {
-	while (lst && index)
-	{
-		--index;
+	while (lst && index-- > 0)
 		lst = lst->next;
-	}
 	return (lst);
 }
