@@ -176,4 +176,13 @@ size_t				ft_splitlen(char **env);
 void				ft_splitdel(char **split);
 char				**ft_resizesplit(char **src, size_t begin, size_t end);
 void				split_iter(char **split, void *(*f)(char *str));
+
+/*
+** Array functions
+*/
+int				ft_arraylen(void **array);
+/*
+** Sort functions
+*/
+void				ft_quicksort(void **array, int start, int end, int (*get)(void *x));
 #endif
